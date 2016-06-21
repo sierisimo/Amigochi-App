@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Amigochi</string>
+
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Contraseña</string>
+
+    <string name="btn_signin">Iniciar Sesion</string>
 </resources>
