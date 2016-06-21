@@ -34,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
                 return onOptionsItemSelected(item);
             }
         });
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fl_ac_home_content, new HomeFragment())
+                .commit();
     }
 
     private void setupToolbar() {
@@ -59,7 +64,12 @@ public class MainActivity extends AppCompatActivity {
                 mDrawer.openDrawer(GravityCompat.START);
                 return true;
             case R.id.action_amigochi:
-
+                if (!(getSupportFragmentManager().findFragmentById(R.id.fl_ac_home_content) instanceof HomeFragment)) {
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.fl_ac_home_content, new HomeFragment())
+                            .commit();
+                }
                 break;
             case R.id.action_pelota:
 
