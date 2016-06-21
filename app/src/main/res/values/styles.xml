@@ -26,7 +26,7 @@
 
     <style name="AWidget.InputLayout.Purple" parent="Widget.Design.TextInputLayout">
         <item name="android:textSize">20sp</item>
-        <item name="android:textColorHint">@android:color/darker_gray</item>
+        <item name="android:textColorHint">@color/colorPrimaryDark</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimary</item>
         <item name="colorControlNormal">@color/colorPrimary</item>
@@ -35,10 +35,10 @@
 
     <style name="AWidget.EditText.Purple" parent="Widget.AppCompat.EditText">
         <item name="android:theme">@style/AWidget.InputLayout.Purple</item>
-        <item name="android:textColorHint">@color/white_500</item>
+        <item name="android:textColorHint">@color/colorPrimaryDark</item>
     </style>
 
     <style name="AText.EditText.Hint" parent="@android:style/TextAppearance">
-        <item name="android:textColor">@color/white_500</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
     </style>
 </resources>

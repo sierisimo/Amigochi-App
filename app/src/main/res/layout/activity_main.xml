@@ -34,14 +34,14 @@
         android:orientation="vertical">
 
         <android.support.design.widget.NavigationView
-            android:id="@+id/nv_home"
+            android:id="@+id/nv_ac_home"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorPrimary"
             app:headerLayout="@layout/header_navigation_menu"
             app:itemBackground="@drawable/selector_nav_menu"
-            app:itemIconTint="@color/colorAccent"
-            app:itemTextColor="@android:color/white"
+            app:itemIconTint="@color/orange_500"
+            app:itemTextColor="@color/white_500"
             app:menu="@menu/menu_navigation_main" />
     </LinearLayout>
 </android.support.v4.widget.DrawerLayout>

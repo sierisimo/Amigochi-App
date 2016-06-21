@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/action_amigochi"
+            android:checkable="true"
+            android:icon="@drawable/vector_android"
+            android:title="@string/action_amigochi"
+            app:itemTextColor="@color/white_500" />
 
+        <item
+            android:id="@+id/action_pelota"
+            android:checkable="true"
+            android:icon="@drawable/vector_star"
+            android:title="@string/action_pelota"
+            app:itemTextColor="@color/white_500" />
+    </group>
 </menu>
