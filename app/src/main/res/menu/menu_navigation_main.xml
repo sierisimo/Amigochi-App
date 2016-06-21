@@ -15,5 +15,12 @@
             android:icon="@drawable/vector_star"
             android:title="@string/action_pelota"
             app:itemTextColor="@color/white_500" />
+
+        <item
+            android:id="@+id/action_store"
+            android:checkable="true"
+            android:icon="@drawable/vector_toys"
+            android:title="@string/action_store"
+            app:itemTextColor="@color/white_500" />
     </group>
 </menu>
