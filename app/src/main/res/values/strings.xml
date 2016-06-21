@@ -3,6 +3,7 @@
 
     <string name="action_amigochi">Mi Amigochi</string>
     <string name="action_pelota">La pelota</string>
+    <string name="action_store">Tiendita</string>
 
     <string name="hint_email">Email</string>
     <string name="hint_password">Contraseña</string>

@@ -3,7 +3,6 @@ package net.amigochi.amigochi.features.statusbar;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,8 +55,6 @@ public class StatusBarFragment extends Fragment implements OnStatusChange {
         points += pointsToAdd;
 
         setPointsText(String.format("%d", points));
-
-        Log.d(TAG, "onPointsAdded() returned: " + points);
     }
 
     @Override
@@ -65,8 +62,6 @@ public class StatusBarFragment extends Fragment implements OnStatusChange {
         points -= pointsToReduce;
 
         setPointsText(String.format("%d", points));
-
-        Log.d(TAG, "onPointsReduced() returned: " + points);
     }
 
     @Override
@@ -74,8 +69,6 @@ public class StatusBarFragment extends Fragment implements OnStatusChange {
         money += moneyToAdd;
 
         setMoneyText(String.format("%.2f", money));
-
-        Log.d(TAG, "onMoneyAdded() returned: " + money);
     }
 
     @Override
@@ -83,7 +76,5 @@ public class StatusBarFragment extends Fragment implements OnStatusChange {
         money -= moneToRemove;
 
         setMoneyText(String.format("%.2f", money));
-
-        Log.d(TAG, "onMoneyRemoved() returned: " + money);
     }
 }

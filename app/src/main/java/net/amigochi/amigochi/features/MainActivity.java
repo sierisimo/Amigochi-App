@@ -15,6 +15,7 @@ import net.amigochi.amigochi.R;
 import net.amigochi.amigochi.features.home.HomeFragment;
 import net.amigochi.amigochi.features.statusbar.OnStatusChange;
 import net.amigochi.amigochi.features.statusbar.StatusBarFragment;
+import net.amigochi.amigochi.features.store.StoreFragment;
 
 import java.util.concurrent.TimeUnit;
 
@@ -66,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
                 .subscribe(new Action1<Integer>() {
                     @Override
                     public void call(Integer integer) {
-                        Log.d(TAG, "call() called with: " + "integer = [" + integer + "]");
                         if (integer < 0) {
                             onStatusChangeListener.onPointsReduced(integer);
                         } else {
@@ -87,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
                 .subscribe(new Action1<Double>() {
                     @Override
                     public void call(Double aDouble) {
-                        Log.d(TAG, "call() called with: " + "aDouble = [" + aDouble + "]");
                         if (aDouble < 0) {
                             onStatusChangeListener.onMoneyRemoved(aDouble);
                         } else {
@@ -132,8 +131,14 @@ public class MainActivity extends AppCompatActivity {
                             .commit();
                 }
                 break;
-            case R.id.action_pelota:
-
+//            case R.id.action_pelota:
+//
+//                break;
+            case R.id.action_store:
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fl_ac_home_content, new StoreFragment())
+                        .commit();
                 break;
         }
 
