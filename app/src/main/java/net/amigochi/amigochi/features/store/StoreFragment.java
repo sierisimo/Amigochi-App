@@ -57,6 +57,25 @@ public class StoreFragment extends Fragment implements View.OnClickListener {
     private void init(View view) {
 //        setDots(view);
         setSuitesClicks(view);
+
+        int suiteId = getActivity().getSharedPreferences(BuildConfig.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
+                .getInt("suiteId", -1);
+
+        if (suiteId != -1) {
+            int drawableId = 0;
+            switch (suiteId) {
+                case 1:
+                    drawableId = R.drawable.suite_1;
+                    break;
+                case 2:
+                    drawableId = R.drawable.suite_2;
+                    break;
+                case 3:
+                    drawableId = R.drawable.suite_3;
+                    break;
+            }
+            ((ImageView) view.findViewById(R.id.iv_fr_store_amigochin_suite)).setImageResource(drawableId);
+        }
     }
 
     private void setSuitesClicks(View view) {
@@ -144,18 +163,18 @@ public class StoreFragment extends Fragment implements View.OnClickListener {
         switch (suiteActive) {
             case R.id.iv_fr_store_status_11_a:
             case R.id.iv_fr_store_status_22_a:
-                suiteId = R.drawable.suite_1;
-                ((ImageView) getView().findViewById(R.id.iv_fr_store_amigochin_suite)).setImageResource(suiteId);
+                suiteId = 1;
+                ((ImageView) getView().findViewById(R.id.iv_fr_store_amigochin_suite)).setImageResource(R.drawable.suite_1);
                 getView().findViewById(R.id.iv_fr_store_amigochin_suite).setVisibility(View.VISIBLE);
                 break;
             case R.id.iv_fr_store_status_12_a:
-                suiteId = R.drawable.suite_2;
-                ((ImageView) getView().findViewById(R.id.iv_fr_store_amigochin_suite)).setImageResource(suiteId);
+                suiteId = 2;
+                ((ImageView) getView().findViewById(R.id.iv_fr_store_amigochin_suite)).setImageResource(R.drawable.suite_2);
                 getView().findViewById(R.id.iv_fr_store_amigochin_suite).setVisibility(View.VISIBLE);
                 break;
             case R.id.iv_fr_store_status_21_a:
-                suiteId = R.drawable.suite_3;
-                ((ImageView) getView().findViewById(R.id.iv_fr_store_amigochin_suite)).setImageResource(suiteId);
+                suiteId = 3;
+                ((ImageView) getView().findViewById(R.id.iv_fr_store_amigochin_suite)).setImageResource(R.drawable.suite_3);
                 getView().findViewById(R.id.iv_fr_store_amigochin_suite).setVisibility(View.VISIBLE);
                 break;
             case R.id.iv_fr_store_status_11_b:

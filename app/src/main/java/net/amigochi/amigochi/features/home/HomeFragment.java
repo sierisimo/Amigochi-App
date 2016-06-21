@@ -36,7 +36,19 @@ public class HomeFragment extends Fragment {
                 .getInt("suiteId", -1);
 
         if (suiteId != -1) {
-            ((ImageView) view.findViewById(R.id.iv_fr_home_suit)).setImageResource(suiteId);
+            int drawableId = 0;
+            switch (suiteId){
+                case 1:
+                    drawableId = R.drawable.suite_1;
+                    break;
+                case 2:
+                    drawableId = R.drawable.suite_2;
+                    break;
+                case 3:
+                    drawableId = R.drawable.suite_3;
+                    break;
+            }
+            ((ImageView) view.findViewById(R.id.iv_fr_home_suit)).setImageResource(drawableId);
         }
     }
 }
