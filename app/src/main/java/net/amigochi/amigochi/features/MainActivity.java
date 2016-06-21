@@ -131,9 +131,9 @@ public class MainActivity extends AppCompatActivity {
                             .commit();
                 }
                 break;
-            case R.id.action_pelota:
-
-                break;
+//            case R.id.action_pelota:
+//
+//                break;
             case R.id.action_store:
                 getSupportFragmentManager()
                         .beginTransaction()

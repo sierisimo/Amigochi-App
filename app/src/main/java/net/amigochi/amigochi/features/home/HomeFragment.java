@@ -1,12 +1,15 @@
 package net.amigochi.amigochi.features.home;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
+import net.amigochi.amigochi.BuildConfig;
 import net.amigochi.amigochi.R;
 
 /**
@@ -29,6 +32,11 @@ public class HomeFragment extends Fragment {
     }
 
     private void init(View view) {
+        int suiteId = getActivity().getSharedPreferences(BuildConfig.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
+                .getInt("suiteId", -1);
 
+        if (suiteId != -1) {
+            ((ImageView) view.findViewById(R.id.iv_fr_home_suit)).setImageResource(suiteId);
+        }
     }
 }

@@ -1,5 +1,6 @@
 package net.amigochi.amigochi.features.store;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import net.amigochi.amigochi.BuildConfig;
 import net.amigochi.amigochi.R;
 
 /**
@@ -17,12 +19,29 @@ public class StoreFragment extends Fragment implements View.OnClickListener {
     private int pageActiveId;
     private int pageActive;
 
+    private int suiteActive;
+
+    private int buttonsArr[];
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         pageActive = 1;
         pageActiveId = R.id.iv_fr_store_dot_1;
+
+        suiteActive = -1;
+
+        buttonsArr = new int[]{
+                R.id.iv_fr_store_status_11_a,
+                R.id.iv_fr_store_status_12_a,
+                R.id.iv_fr_store_status_21_a,
+                R.id.iv_fr_store_status_22_a,
+                R.id.iv_fr_store_status_11_b,
+                R.id.iv_fr_store_status_12_b,
+                R.id.iv_fr_store_status_21_b,
+                R.id.iv_fr_store_status_22_b
+        };
     }
 
     @Nullable
@@ -36,6 +55,22 @@ public class StoreFragment extends Fragment implements View.OnClickListener {
     }
 
     private void init(View view) {
+//        setDots(view);
+        setSuitesClicks(view);
+    }
+
+    private void setSuitesClicks(View view) {
+        view.findViewById(R.id.iv_fr_store_status_11_a).setOnClickListener(this);
+        view.findViewById(R.id.iv_fr_store_status_11_b).setOnClickListener(this);
+        view.findViewById(R.id.iv_fr_store_status_12_a).setOnClickListener(this);
+        view.findViewById(R.id.iv_fr_store_status_12_b).setOnClickListener(this);
+        view.findViewById(R.id.iv_fr_store_status_21_a).setOnClickListener(this);
+        view.findViewById(R.id.iv_fr_store_status_21_b).setOnClickListener(this);
+        view.findViewById(R.id.iv_fr_store_status_22_a).setOnClickListener(this);
+        view.findViewById(R.id.iv_fr_store_status_22_b).setOnClickListener(this);
+    }
+
+    private void setDots(View view) {
         view.findViewById(R.id.iv_fr_store_dot_1).setOnClickListener(this);
         view.findViewById(R.id.iv_fr_store_dot_2).setOnClickListener(this);
         view.findViewById(R.id.iv_fr_store_dot_3).setOnClickListener(this);
@@ -99,6 +134,45 @@ public class StoreFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    private void setSuite() {
+        for (int i = 0; i < buttonsArr.length; i++) {
+            getView().findViewById(buttonsArr[i]).setEnabled(buttonsArr[i] != suiteActive);
+        }
+
+        int suiteId = -1;
+
+        switch (suiteActive) {
+            case R.id.iv_fr_store_status_11_a:
+            case R.id.iv_fr_store_status_22_a:
+                suiteId = R.drawable.suite_1;
+                ((ImageView) getView().findViewById(R.id.iv_fr_store_amigochin_suite)).setImageResource(suiteId);
+                getView().findViewById(R.id.iv_fr_store_amigochin_suite).setVisibility(View.VISIBLE);
+                break;
+            case R.id.iv_fr_store_status_12_a:
+                suiteId = R.drawable.suite_2;
+                ((ImageView) getView().findViewById(R.id.iv_fr_store_amigochin_suite)).setImageResource(suiteId);
+                getView().findViewById(R.id.iv_fr_store_amigochin_suite).setVisibility(View.VISIBLE);
+                break;
+            case R.id.iv_fr_store_status_21_a:
+                suiteId = R.drawable.suite_3;
+                ((ImageView) getView().findViewById(R.id.iv_fr_store_amigochin_suite)).setImageResource(suiteId);
+                getView().findViewById(R.id.iv_fr_store_amigochin_suite).setVisibility(View.VISIBLE);
+                break;
+            case R.id.iv_fr_store_status_11_b:
+            case R.id.iv_fr_store_status_12_b:
+            case R.id.iv_fr_store_status_21_b:
+            case R.id.iv_fr_store_status_22_b:
+                getView().findViewById(R.id.iv_fr_store_amigochin_suite).setVisibility(View.INVISIBLE);
+                suiteId = -1;
+                break;
+        }
+
+        getActivity().getSharedPreferences(BuildConfig.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
+                .edit()
+                .putInt("suiteId", suiteId)
+                .apply();
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -123,6 +197,17 @@ public class StoreFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.iv_fr_store_arrow_right:
                 moveByArrows(1);
+                break;
+            case R.id.iv_fr_store_status_11_a:
+            case R.id.iv_fr_store_status_12_a:
+            case R.id.iv_fr_store_status_21_a:
+            case R.id.iv_fr_store_status_22_a:
+            case R.id.iv_fr_store_status_11_b:
+            case R.id.iv_fr_store_status_12_b:
+            case R.id.iv_fr_store_status_21_b:
+            case R.id.iv_fr_store_status_22_b:
+                suiteActive = v.getId();
+                setSuite();
                 break;
         }
     }
