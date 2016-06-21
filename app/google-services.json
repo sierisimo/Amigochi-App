@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "814849221869",
+    "firebase_url": "https://amigochi-f3bd8.firebaseio.com",
+    "project_id": "amigochi-f3bd8",
+    "storage_bucket": "amigochi-f3bd8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814849221869:android:43746f12c1c8fbff",
+        "android_client_info": {
+          "package_name": "net.amigochi.amigochi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814849221869-31dca60q1c99r728c6mnsdru5vj2krc4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.amigochi.amigochi",
+            "certificate_hash": "BEB683E6D62713CE0F7A318825446627CBA2C9F9"
+          }
+        },
+        {
+          "client_id": "814849221869-5v3nhqfesrrrqfshpifuad04ccvv4un1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY24PBuyc20KMYdcXQT2eA62PvgexTJMI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814849221869-5v3nhqfesrrrqfshpifuad04ccvv4un1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

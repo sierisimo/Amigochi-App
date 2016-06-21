@@ -77,5 +77,6 @@ dependencies {
     compile 'com.squareup.okhttp3:logging-interceptor:3.0.1'
 
     compile 'com.squareup.picasso:picasso:2.5.2'
-
 }
+
+apply plugin: 'com.google.gms.google-services'
