@@ -23,8 +23,8 @@ ext {
 //    versionCode = gitVersion
 
     versionMajor = 0 //Major final release
-    versionMinor = 0 //Feature
-    versionPatch = 1
+    versionMinor = 3 //Feature
+    versionPatch = 5
     //Patch (ok, this is a little lie, because we were using this as release at first...)
 
     versionCode = versionMajor * 10000 + versionMinor * 100 + versionPatch
