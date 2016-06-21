@@ -7,9 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import net.amigochi.amigochi.features.home.MainActivity;
+import net.amigochi.amigochi.features.login.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
-    private Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +18,15 @@ public class SplashActivity extends AppCompatActivity {
 
         ((TextView) findViewById(R.id.tv_ac_splash_version)).setText(BuildConfig.VERSION_NAME);
 
-        handler = new Handler();
+        Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                if (getSharedPreferences(BuildConfig.SHARED_PREFERENCES_NAME, MODE_PRIVATE).getBoolean("isLogged", false)) {
+                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                } else {
+                    startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                }
                 finish();
             }
         }, 3000);

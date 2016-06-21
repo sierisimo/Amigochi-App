@@ -20,6 +20,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".features.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".features.home.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
