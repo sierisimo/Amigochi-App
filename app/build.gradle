@@ -77,6 +77,21 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
 
     compile 'de.hdodenhof:circleimageview:2.0.0'
+
+    compile 'com.google.firebase:firebase-core:9.0.2'
+
+    compile 'com.google.firebase:firebase-messaging:9.0.2'
+
+//    com.google.firebase:firebase-core:9.0.2 	Analytics
+//    com.google.firebase:firebase-database:9.0.2 	Realtime Database
+//    com.google.firebase:firebase-storage:9.0.2 	Storage
+//    com.google.firebase:firebase-crash:9.0.2 	Crash Reporting
+//    com.google.firebase:firebase-auth:9.0.2 	Authentication
+//    com.google.firebase:firebase-messaging:9.0.2 	Cloud Messaging / Notifications
+//    com.google.firebase:firebase-config:9.0.2 	Remote Config
+//    com.google.firebase:firebase-invites:9.0.2 	Invites / Dynamic Links
+//    com.google.firebase:firebase-ads:9.0.2 	AdMob
+//    com.google.android.gms:play-services-appindexing:9.0.2 	App Indexing
 }
 
 apply plugin: 'com.google.gms.google-services'
