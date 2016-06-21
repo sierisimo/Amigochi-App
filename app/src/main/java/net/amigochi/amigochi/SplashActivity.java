@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import net.amigochi.amigochi.features.home.MainActivity;
+import net.amigochi.amigochi.features.MainActivity;
 import net.amigochi.amigochi.features.login.LoginActivity;
 import net.amigochi.amigochi.shared.AValues;
 

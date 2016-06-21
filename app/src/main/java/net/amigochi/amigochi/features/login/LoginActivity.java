@@ -12,7 +12,7 @@ import android.widget.EditText;
 
 import net.amigochi.amigochi.BuildConfig;
 import net.amigochi.amigochi.R;
-import net.amigochi.amigochi.features.home.MainActivity;
+import net.amigochi.amigochi.features.MainActivity;
 import net.amigochi.amigochi.shared.AValues;
 
 /**

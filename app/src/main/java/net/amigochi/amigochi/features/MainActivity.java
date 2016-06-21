@@ -1,4 +1,4 @@
-package net.amigochi.amigochi.features.home;
+package net.amigochi.amigochi.features;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,12 +11,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import net.amigochi.amigochi.R;
+import net.amigochi.amigochi.features.home.HomeFragment;
+import net.amigochi.amigochi.features.statusbar.OnStatusChange;
+import net.amigochi.amigochi.features.statusbar.StatusBarFragment;
 
 /**
  * Created by sierisimo on 20/06/16.
  */
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawer;
+
+    private OnStatusChange onStatusChangeListener;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,8 +40,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        StatusBarFragment statusBarFragment = new StatusBarFragment();
+        onStatusChangeListener = statusBarFragment;
+
         getSupportFragmentManager()
                 .beginTransaction()
+                .add(R.id.fl_ac_main_status, statusBarFragment)
                 .replace(R.id.fl_ac_home_content, new HomeFragment())
                 .commit();
     }

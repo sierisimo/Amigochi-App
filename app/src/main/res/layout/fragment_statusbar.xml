@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="12dp"
+        android:gravity="center_vertical"
+        android:text="Puntos"
+        android:textColor="@color/white_500" />
+
+    <TextView
+        android:id="@+id/tv_fr_statusbar_points"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="12dp"
+        android:gravity="center_vertical"
+        android:text="1000"
+        android:textColor="@color/white_500" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:layout_marginEnd="12dp"
+        android:gravity="center_vertical"
+        android:text="Dineros $"
+        android:textColor="@color/white_500" />
+
+    <TextView
+        android:id="@+id/tv_fr_statusbar_money"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:layout_marginEnd="12dp"
+        android:gravity="center_vertical"
+        android:text="234.00"
+        android:textColor="@color/white_500" />
+
+</LinearLayout>
