@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import net.amigochi.amigochi.features.home.MainActivity;
 import net.amigochi.amigochi.features.login.LoginActivity;
+import net.amigochi.amigochi.shared.AValues;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -22,7 +23,7 @@ public class SplashActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (getSharedPreferences(BuildConfig.SHARED_PREFERENCES_NAME, MODE_PRIVATE).getBoolean("isLogged", false)) {
+                if (getSharedPreferences(BuildConfig.SHARED_PREFERENCES_NAME, MODE_PRIVATE).getBoolean(AValues.PREF_IS_LOGGED, false)) {
                     startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 } else {
                     startActivity(new Intent(SplashActivity.this, LoginActivity.class));

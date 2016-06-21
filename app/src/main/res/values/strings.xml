@@ -9,4 +9,6 @@
     <string name="error_login_check">Error con tus datos de Login</string>
     <string name="error_login_email">Direccion de correo invalida</string>
     <string name="error_login_password">La longitud del password debe ser minimo 8</string>
+
+    <string name="title_activity_home">Amigochi</string>
 </resources>

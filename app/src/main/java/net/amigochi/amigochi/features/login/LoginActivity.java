@@ -10,8 +10,10 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 
+import net.amigochi.amigochi.BuildConfig;
 import net.amigochi.amigochi.R;
 import net.amigochi.amigochi.features.home.MainActivity;
+import net.amigochi.amigochi.shared.AValues;
 
 /**
  * Created by sierisimo on 20/06/16.
@@ -40,11 +42,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         content = ((EditText) findViewById(R.id.et_ac_login_password)).getText().toString();
 
         if (content.isEmpty() || content.length() < 8) {
-            setErrorMessage((TextInputLayout) findViewById(R.id.til_ac_login_email), R.string.error_login_password);
+            setErrorMessage((TextInputLayout) findViewById(R.id.til_ac_login_password), R.string.error_login_password);
 
             return false;
         }
-        
+
         return true;
     }
 
@@ -58,6 +60,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         switch (v.getId()) {
             case R.id.acb_ac_login_signin:
                 if (validate()) {
+                    getSharedPreferences(BuildConfig.SHARED_PREFERENCES_NAME, MODE_PRIVATE)
+                            .edit()
+                            .putBoolean(AValues.PREF_IS_LOGGED, true)
+                            .apply();
+
+
                     startActivity(new Intent(this, MainActivity.class));
                     finish();
                 } else {
