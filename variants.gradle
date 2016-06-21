@@ -1,0 +1,32 @@
+ext {
+    configuration = [
+            package          : "net.amigochi.amigochi",
+            compileSdkVersion: 23,
+            targetSdkVersion : 23,
+            minSdkVersion    : 19,
+            buildToolsVersion: "23.0.2",
+    ]
+
+    backend = [
+            url: [
+                    debug  : '""',
+                    release: '""'
+            ]
+    ]
+
+    preferencesName = [
+            debug  : '"AmigochiSharedPrefs"',
+            release: '"AchiShPs"'
+    ]
+
+//    gitVersion = 'git rev-list HEAD --first-parent --count'.execute().text.trim().toInteger()
+//    versionCode = gitVersion
+
+    versionMajor = 0 //Major final release
+    versionMinor = 0 //Feature
+    versionPatch = 1
+    //Patch (ok, this is a little lie, because we were using this as release at first...)
+
+    versionCode = versionMajor * 10000 + versionMinor * 100 + versionPatch
+    versionName = "${versionMajor}.${versionMinor}.${versionPatch}"
+}
