@@ -7,4 +7,6 @@
     <color name="black_500">@android:color/black</color>
 
     <color name="gray_500">@android:color/darker_gray</color>
+
+    <color name="white_500">@android:color/white</color>
 </resources>
