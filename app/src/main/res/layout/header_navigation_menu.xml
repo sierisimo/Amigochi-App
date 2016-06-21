@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="@dimen/activity_horizontal_margin">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civ_he_navigation_menu"
+        android:layout_width="98dp"
+        android:layout_height="98dp"
+        android:layout_gravity="center"
+        android:elevation="8dp"
+        android:src="@drawable/vector_user_profile"
+        app:civ_border_color="@color/colorAccent"
+        app:civ_border_width="1dp"
+        app:civ_fill_color="@color/orange_500"
+        app:elevation="8dp" />
+
+    <TextView
+        android:id="@+id/tv_he_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:text="Pepito Banana"
+        android:textColor="@color/white_500"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+</LinearLayout>

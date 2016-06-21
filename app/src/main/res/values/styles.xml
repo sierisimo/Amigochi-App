@@ -27,18 +27,18 @@
     <style name="AWidget.InputLayout.Purple" parent="Widget.Design.TextInputLayout">
         <item name="android:textSize">20sp</item>
         <item name="android:textColorHint">@android:color/darker_gray</item>
-        <item name="colorPrimary">@android:color/holo_purple</item>
-        <item name="colorPrimaryDark">@android:color/holo_purple</item>
-        <item name="colorControlNormal">@android:color/holo_purple</item>
-        <item name="colorControlActivated">@android:color/holo_purple</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
     </style>
 
     <style name="AWidget.EditText.Purple" parent="Widget.AppCompat.EditText">
         <item name="android:theme">@style/AWidget.InputLayout.Purple</item>
-        <item name="android:textColorHint">@android:color/darker_gray</item>
+        <item name="android:textColorHint">@color/white_500</item>
     </style>
 
     <style name="AText.EditText.Hint" parent="@android:style/TextAppearance">
-        <item name="android:textColor">@color/gray_500</item>
+        <item name="android:textColor">@color/white_500</item>
     </style>
 </resources>
