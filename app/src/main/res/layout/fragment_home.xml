@@ -6,6 +6,11 @@
     android:background="@drawable/background">
 
     <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:src="@drawable/goalbar" />
+
+    <ImageView
         android:layout_width="240dp"
         android:layout_height="240dp"
         android:layout_gravity="center"

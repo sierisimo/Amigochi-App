@@ -8,9 +8,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import net.amigochi.amigochi.BuildConfig;
 import net.amigochi.amigochi.R;
+
+import java.util.concurrent.TimeUnit;
+
+import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by sierisimo on 21/06/16.
@@ -37,7 +45,7 @@ public class HomeFragment extends Fragment {
 
         if (suiteId != -1) {
             int drawableId = 0;
-            switch (suiteId){
+            switch (suiteId) {
                 case 1:
                     drawableId = R.drawable.suite_1;
                     break;
@@ -50,5 +58,23 @@ public class HomeFragment extends Fragment {
             }
             ((ImageView) view.findViewById(R.id.iv_fr_home_suit)).setImageResource(drawableId);
         }
+
+//        Observable.range(0, 74)
+//                .delay(2, TimeUnit.SECONDS)
+//                .observeOn(Schedulers.newThread())
+//                .subscribeOn(AndroidSchedulers.mainThread())
+//                .subscribe(new Action1<Integer>() {
+//                    @Override
+//                    public void call(Integer integer) {
+//                        if (getView() != null) {
+//                            ((ProgressBar) getView().findViewById(R.id.pb_fr_home)).setProgress(integer);
+//                        }
+//                    }
+//                }, new Action1<Throwable>() {
+//                    @Override
+//                    public void call(Throwable throwable) {
+//                        throwable.printStackTrace();
+//                    }
+//                });
     }
 }

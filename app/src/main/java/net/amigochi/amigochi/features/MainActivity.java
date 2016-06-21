@@ -1,5 +1,6 @@
 package net.amigochi.amigochi.features;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
@@ -8,14 +9,16 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 
+import net.amigochi.amigochi.BuildConfig;
 import net.amigochi.amigochi.R;
 import net.amigochi.amigochi.features.home.HomeFragment;
+import net.amigochi.amigochi.features.login.LoginActivity;
 import net.amigochi.amigochi.features.statusbar.OnStatusChange;
 import net.amigochi.amigochi.features.statusbar.StatusBarFragment;
 import net.amigochi.amigochi.features.store.StoreFragment;
+import net.amigochi.amigochi.shared.AValues;
 
 import java.util.concurrent.TimeUnit;
 
@@ -139,6 +142,16 @@ public class MainActivity extends AppCompatActivity {
                         .beginTransaction()
                         .replace(R.id.fl_ac_home_content, new StoreFragment())
                         .commit();
+                break;
+            case R.id.action_signout:
+                getSharedPreferences(BuildConfig.SHARED_PREFERENCES_NAME, MODE_PRIVATE)
+                        .edit()
+                        .clear()
+                        .putBoolean(AValues.PREF_IS_LOGGED, false)
+                        .apply();
+
+                startActivity(new Intent(this, LoginActivity.class));
+                finish();
                 break;
         }
 

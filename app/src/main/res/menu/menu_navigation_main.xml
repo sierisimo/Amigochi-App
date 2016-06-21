@@ -5,22 +5,30 @@
         <item
             android:id="@+id/action_amigochi"
             android:checkable="true"
-            android:icon="@drawable/vector_android"
+            android:icon="@drawable/menu_amigochi"
             android:title="@string/action_amigochi"
             app:itemTextColor="@color/white_500" />
 
         <!--<item-->
-            <!--android:id="@+id/action_pelota"-->
-            <!--android:checkable="true"-->
-            <!--android:icon="@drawable/vector_star"-->
-            <!--android:title="@string/action_pelota"-->
-            <!--app:itemTextColor="@color/white_500" />-->
+        <!--android:id="@+id/action_pelota"-->
+        <!--android:checkable="true"-->
+        <!--android:icon="@drawable/vector_star"-->
+        <!--android:title="@string/action_pelota"-->
+        <!--app:itemTextColor="@color/white_500" />-->
 
         <item
             android:id="@+id/action_store"
             android:checkable="true"
-            android:icon="@drawable/vector_toys"
+            android:icon="@drawable/menu_store"
             android:title="@string/action_store"
             app:itemTextColor="@color/white_500" />
+
+        <item
+            android:id="@+id/action_signout"
+            android:checkable="true"
+            android:icon="@drawable/vector_signout"
+            android:title="Cerrar Sesion"
+            app:itemTextColor="@color/white_500" />
+
     </group>
 </menu>
